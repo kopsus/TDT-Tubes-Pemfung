@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div class="bg-[#283951]">
+        <header class="flex px-40 justify-between w-full items-center h-16 text-[#D9D9D9] font-bold">
+            <a href="{{ url_for('home') }}" class="text-2xl font-asu">Home</a>
+            <ul class="flex justify-around w-60 text-2xl">
+                <li>
+                    <a href="{{ url_for('about') }}">About</a>
+                </li>
+                <li>
+                    <a href="{{ url_for('caridata') }}">Search</a>
+                </li>
+            </ul>
+        </header>
+        <img src="http://drive.google.com/uc?export=view&id=1krvnFYt_HdeHDDKK-T5S09o93willPc2" alt="hospital"
+            class="h-[470px] w-full">
+        <main class="my-20">
+            <h1
+                class="text-center font-bold text-3xl text-[#D9D9D9] mb-10 bg-clip-text text-transparent bg-gradient-to-r from-[#8e9eab] to-[#eef2f3]">
+                CARI DATA</h1>
+            <form action="http://127.0.0.1:5000/cari" method="POST" class="w-96 mx-auto">
+                <div class="flex justify-center">
+                    <input
+                        class="w-full p-3 text-xl border rounded-full focus:outline-none focus:ring-2 focus:ring-slate-500"
+                        type="text" name="cari" placeholder="masukan provinsi" />
+                </div>
+                <button
+                    class="float-right my-3 border-black py-1 px-5 rounded-full bg-[#15872E] hover:bg-[#127B29] text-white shadow shadow-black">Cari</button>
+            </form>
+            <section class="clear-right my-24">
+                <h1
+                    class="text-center font-bold text-3xl text-[#D9D9D9] bg-clip-text text-transparent bg-gradient-to-r from-[#8e9eab] to-[#eef2f3]">
+                    RS TERSEDIA DI</h1>
+                <div class="grid grid-cols-2 my-10 rounded-lg">
+                    {% for i in x %}
+                    <div class="border border-none bg-[#9CA1BB] shadow-md shadow-[#9CA1BB] p-5 mx-10 my-5 rounded-3xl">
+                        <p class="font-bold uppercase text-xl">{{i}}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </main>
+        <footer class="bg-[#D9D9D9] px-20 pt-12 pb-5">
+            <div class="grid grid-cols-2">
+                <div class="w-[500px] text-center">
+                    <p
+                        class="text-5xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-[#360033] to-[#0b8793]">
+                        TDT</p>
+                    <p
+                        class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#360033] to-[#0b8793]">
+                        Production's</p>
+                </div>
+                <div>
+                    <p>Membantu anda dalam mencari rumah sakit rujukan untuk pasien covid-19 di berbagai provinsi
+                        Indonesia,
+                        yang sudah
+                        berkerja sama dengan banyak rumah sakit yang tersebar luas di Indonesia yang akan mempermudah
+                        dalam
+                        perujukan pasien covid-19
+                        tersebut.</p>
+                </div>
+                <div>
+                    <p class="text-center mt-5 font-bold">Copy Right © 2023 TDT Production's All right reserved</p>
+                </div>
+                <div class="mt-5">
+                    <p class="font-bold">Connect With</p>
+                    <div class="flex mt-3">
+                        <a href="https://www.google.com/intl/id/gmail/about/" target="_blank"><img
+                                src="http://drive.google.com/uc?export=view&id=17dbdhL1CBqrxvCDt1PgT5u3Ygu__jK7B"
+                                alt="Instagram" width="40px" class="object-contain cursor-pointer"></a>
+                        <a href="https://www.Instagram.com" target="_blank"><img
+                                src="http://drive.google.com/uc?export=view&id=1XntLi3sEWI6y6hUvwMko9_nDNfj_Rsu0"
+                                alt="Email" width="40px" class="object-contain mx-5"></a>
+                        <a href="https://www.twitter.com" target="_blank"><img
+                                src="http://drive.google.com/uc?export=view&id=1qBzUkQihJ5fRQ7w4rSv5oN6fXESL-S0l"
+                                alt="Twitter" width="40px" class="object-contain"></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
